@@ -1,0 +1,1 @@
+C:/cygwin64/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/cpp_project.dir/main.cpp.o CMakeFiles/cpp_project.dir/Dynamic_Graph.cpp.o CMakeFiles/cpp_project.dir/Graph_Node.cpp.o CMakeFiles/cpp_project.dir/Graph_Edge.cpp.o CMakeFiles/cpp_project.dir/Rooted_Tree.cpp.o  -o cpp_project.exe -Wl,--out-implib,libcpp_project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
