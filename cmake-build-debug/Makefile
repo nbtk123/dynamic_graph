@@ -204,6 +204,33 @@ Graph_Node.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/Graph_Node.cpp.s
 .PHONY : Graph_Node.cpp.s
 
+List.o: List.cpp.o
+
+.PHONY : List.o
+
+# target to build an object file
+List.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/List.cpp.o
+.PHONY : List.cpp.o
+
+List.i: List.cpp.i
+
+.PHONY : List.i
+
+# target to preprocess a source file
+List.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/List.cpp.i
+.PHONY : List.cpp.i
+
+List.s: List.cpp.s
+
+.PHONY : List.s
+
+# target to generate assembly for a file
+List.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/List.cpp.s
+.PHONY : List.cpp.s
+
 Rooted_Tree.o: Rooted_Tree.cpp.o
 
 .PHONY : Rooted_Tree.o
@@ -276,6 +303,9 @@ help:
 	@echo "... Graph_Node.o"
 	@echo "... Graph_Node.i"
 	@echo "... Graph_Node.s"
+	@echo "... List.o"
+	@echo "... List.i"
+	@echo "... List.s"
 	@echo "... Rooted_Tree.o"
 	@echo "... Rooted_Tree.i"
 	@echo "... Rooted_Tree.s"

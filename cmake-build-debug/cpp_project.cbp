@@ -98,6 +98,12 @@
 		<Unit filename="/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Node.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/List.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/List.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Rooted_Tree.cpp">
 			<Option target="cpp_project"/>
 		</Unit>

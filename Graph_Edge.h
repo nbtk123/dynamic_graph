@@ -3,6 +3,7 @@
 
 
 #include "Graph_Node.h"
+class Graph_Node;
 
 class Graph_Edge {
 private:
