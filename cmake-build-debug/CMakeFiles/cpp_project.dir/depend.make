@@ -24,5 +24,10 @@ CMakeFiles/cpp_project.dir/List.cpp.o: ../List.h
 CMakeFiles/cpp_project.dir/Rooted_Tree.cpp.o: ../Rooted_Tree.cpp
 CMakeFiles/cpp_project.dir/Rooted_Tree.cpp.o: ../Rooted_Tree.h
 
+CMakeFiles/cpp_project.dir/main.cpp.o: ../Dynamic_Graph.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../Graph_Edge.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../Graph_Node.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../List.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../Rooted_Tree.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
 

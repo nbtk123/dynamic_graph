@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Dynamic_Graph.cpp
-Dynamic_Graph.h
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Dynamic_Graph.h
-
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Dynamic_Graph.h
 Graph_Node.h
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Node.h
@@ -17,10 +13,6 @@ Graph_Edge.h
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Edge.h
 Rooted_Tree.h
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Rooted_Tree.h
-
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Edge.cpp
-Graph_Edge.h
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Edge.h
 
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Edge.h
 Graph_Node.h
@@ -38,10 +30,6 @@ list
 Graph_Edge.h
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Graph_Edge.h
 
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/List.cpp
-List.h
-/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/List.h
-
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/List.h
 cstddef
 -
@@ -49,4 +37,12 @@ cstddef
 /cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Rooted_Tree.h
 ostream
 -
+
+/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/main.cpp
+iostream
+-
+cstdlib
+-
+Dynamic_Graph.h
+/cygdrive/c/Users/nbtk1/Desktop/Rotem/cpp_project/Dynamic_Graph.h
 

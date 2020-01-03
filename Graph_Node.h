@@ -10,8 +10,8 @@ class Graph_Edge;
 class Graph_Node {
 private:
     unsigned key;
-    List<Graph_Edge> *in;
-    List<Graph_Edge> *out;
+    List<Graph_Edge> *in = new List<Graph_Edge>;
+    List<Graph_Edge> *out = new List<Graph_Edge>;
 
     /**
      * Check whether an edge exists in some edge-list (used for incoming & outgoing edges).
@@ -35,7 +35,9 @@ public:
 
     unsigned Add_Incoming_Edge_If_Not_Exists(Graph_Edge *edge);
 
-    unsigned operator==(Graph_Node *other);
+    unsigned operator==(Graph_Node &other);
+
+    unsigned operator!=(Graph_Node &other);
 
     /**
      * Adds an edge to some edge-list if not exists (used to prevent double incoming && outgoing edges from this node)
