@@ -1,5 +1,10 @@
 #include "Graph_Node.h"
 
+Graph_Node::~Graph_Node() {
+    delete in;
+    delete out;
+}
+
 unsigned Graph_Node::Get_out_Degree() const {
     return out->Size();
 }
@@ -12,13 +17,13 @@ unsigned Graph_Node::Get_key() const {
     return key;
 }
 
-unsigned Graph_Node::Add_Outgoing_Edge_If_Not_Exists(Graph_Edge *edge) {
-    return Add_Edge_If_Not_Exists(out, edge);
-}
-
-unsigned Graph_Node::Add_Incoming_Edge_If_Not_Exists(Graph_Edge *edge) {
-    return Add_Edge_If_Not_Exists(in, edge);
-}
+//unsigned Graph_Node::Add_Outgoing_Edge_If_Not_Exists(Graph_Edge *edge) {
+//    return Add_Edge_If_Not_Exists(out, edge);
+//}
+//
+//unsigned Graph_Node::Add_Incoming_Edge_If_Not_Exists(Graph_Edge *edge) {
+//    return Add_Edge_If_Not_Exists(in, edge);
+//}
 
 unsigned Graph_Node::operator==(Graph_Node &other) {
     return key == other.key && *in == *other.in && *out == *other.out;
@@ -28,17 +33,37 @@ unsigned Graph_Node::operator!=(Graph_Node &other) {
     return !(*this==other);
 }
 
-unsigned Graph_Node::Is_Edge_Exist(List<Graph_Edge> *lst, Graph_Edge *edge) {
-    return lst->Contains(edge);
+//unsigned Graph_Node::Is_Edge_Exist(List<Graph_Edge> *lst, Graph_Edge *edge) {
+//    return lst->Contains(edge);
+//}
+
+//unsigned int Graph_Node::Add_Edge_If_Not_Exists(List<Graph_Edge> *lst, Graph_Edge *edge) {
+//    if (Is_Edge_Exist(lst, edge)) {
+//        return 0;
+//    }
+//
+//    lst->Push_Back(edge);
+//    return 1;
+//}
+
+void Graph_Node::Add_Outgoing_Edge(Graph_Edge *edge) {
+    out->Push_Back(edge);
 }
 
-unsigned int Graph_Node::Add_Edge_If_Not_Exists(List<Graph_Edge> *lst, Graph_Edge *edge) {
-    if (Is_Edge_Exist(lst, edge)) {
-        return 0;
-    }
+void Graph_Node::Add_Incoming_Edge(Graph_Edge *edge) {
+    in->Push_Back(edge);
+}
 
-    lst->Push_Back(edge);
-    return 1;
+void Graph_Node::Remove_Outgoing_Edge(Graph_Edge *edge) {
+    out->Remove(edge);
+}
+
+void Graph_Node::Remove_Incoming_Edge(Graph_Edge *edge) {
+    in->Remove(edge);
+}
+
+unsigned Graph_Node::Has_Edges() {
+    return in->Size() > 0 || out->Size() > 0;
 }
 
 /*

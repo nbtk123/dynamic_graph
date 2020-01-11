@@ -3,136 +3,45 @@
 
 #include <cstddef>
 
-template<typename T>
-struct Item {
-    T *data;
-    Item<T> *next;
-    Item<T> *prev;
+struct ListItem {
+    ListItem *next = NULL;
+    ListItem *prev = NULL;
 
-    unsigned operator==(Item<T> &other);
-    unsigned operator!=(Item<T> &other);
+    virtual unsigned operator==(ListItem &other) = 0;
+    virtual unsigned operator!=(ListItem &other) = 0;
 };
 
-template<typename T>
-unsigned Item<T>::operator==(Item<T> &other) {
-    return *(this->data) == *(other.data);
-}
+//unsigned ListItem::operator==(ListItem &other) {
+//    return *this == other;
+//}
+//
+//unsigned ListItem::operator!=(ListItem &other) {
+//    return !(*this == other);
+//}
 
-template<typename T>
-unsigned Item<T>::operator!=(Item<T> &other) {
-    return !(*this == other);
-}
-
-template<typename T>
 class List {
 private:
-    Item<T> *head;
-    Item<T> *tail;
+    ListItem *head;
+    ListItem *tail;
     unsigned size;
 public:
     List();
 
-    Item<T> *Head() const;
+    ListItem *Head() const;
 
-    Item<T> *Tail() const;
+    ListItem *Tail() const;
 
-    void Push_Back(T *item);
+    void Push_Back(ListItem *item);
+
+    void Remove(ListItem *item);
 
     unsigned Size() const;
 
-    unsigned Contains(T *item);
+    unsigned Contains(ListItem *item);
 
-    unsigned operator==(List<T> &other);
+    unsigned operator==(List &other);
 
-    unsigned operator!=(List<T> &other);
+    unsigned operator!=(List &other);
 };
-
-template<typename T>
-Item<T> *List<T>::Head() const {
-    return head;
-}
-
-template<typename T>
-Item<T> *List<T>::Tail() const {
-    return tail;
-}
-
-template<typename T>
-List<T>::List() {
-    head = NULL;
-    tail = NULL;
-    size = 0;
-}
-
-template<typename T>
-void List<T>::Push_Back(T *item) {
-    Item<T> *tmp = new Item<T>;
-    tmp->data = item;
-    tmp->next = NULL;
-
-    if (head == NULL) {
-        head = tmp;
-        tail = tmp;
-    } else {
-        tail->next = tmp;
-        tmp->prev = tail;
-        tail = tail->next;
-    }
-
-    size += 1;
-}
-
-template<typename T>
-unsigned List<T>::Size() const {
-    return size;
-}
-
-template<typename T>
-unsigned List<T>::Contains(T *item) {
-    if (head == NULL) {
-        return 0;
-    }
-
-    Item<T> *tmp = head;
-    while (tmp != NULL) {
-        if (tmp->data == item) {
-            return 1;
-        }
-        tmp = head->next;
-    }
-
-    return 0;
-}
-
-template<typename T>
-unsigned List<T>::operator==(List<T> &other) {
-
-    // Defend against null obj
-    if (&other == NULL) {
-        return 0;
-    }
-
-    Item<T> *thisTmp = head;
-    Item<T> *otherTmp = other.head;
-
-    while (thisTmp != NULL && otherTmp != NULL) {
-        if (*(thisTmp->data) != *(otherTmp->data)) {
-            return 0;
-        }
-
-        thisTmp = thisTmp->next;
-        otherTmp = otherTmp->next;
-    }
-
-    // If the lists are at the same length, both pointers needs to be NULL at this point --> return TRUE.
-    // Otherwise, FALSE is returned.
-    return (thisTmp == NULL && otherTmp == NULL);
-}
-
-template<typename T>
-unsigned List<T>::operator!=(List<T> &other) {
-    return !(*this==other);
-}
-
 
 #endif

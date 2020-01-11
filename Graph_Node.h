@@ -3,15 +3,14 @@
 
 
 #include "List.h"
-#include <list>
 #include "Graph_Edge.h"
 class Graph_Edge;
 
 class Graph_Node {
 private:
     unsigned key;
-    List<Graph_Edge> *in = new List<Graph_Edge>;
-    List<Graph_Edge> *out = new List<Graph_Edge>;
+    List *in = new List;
+    List *out = new List;
 
     /**
      * Check whether an edge exists in some edge-list (used for incoming & outgoing edges).
@@ -19,11 +18,13 @@ private:
      * @param edge - the edge to find
      * @return 1 if true, 0 otherwise
      */
-    static unsigned int Is_Edge_Exist(List<Graph_Edge> *lst, Graph_Edge *edge);
+//    static unsigned int Is_Edge_Exist(List<Graph_Edge> *lst, Graph_Edge *edge);
 public:
     Graph_Node(unsigned key) {
         this->key = key;
     }
+
+    ~Graph_Node();
 
     unsigned Get_key() const;
 
@@ -31,9 +32,19 @@ public:
 
     unsigned Get_in_Degree() const;
 
-    unsigned Add_Outgoing_Edge_If_Not_Exists(Graph_Edge *edge);
+    void Add_Outgoing_Edge(Graph_Edge *edge);
 
-    unsigned Add_Incoming_Edge_If_Not_Exists(Graph_Edge *edge);
+    void Add_Incoming_Edge(Graph_Edge *edge);
+
+    void Remove_Outgoing_Edge(Graph_Edge *edge);
+
+    void Remove_Incoming_Edge(Graph_Edge *edge);
+
+    unsigned Has_Edges();
+
+//    unsigned Add_Outgoing_Edge_If_Not_Exists(Graph_Edge *edge);
+//
+//    unsigned Add_Incoming_Edge_If_Not_Exists(Graph_Edge *edge);
 
     unsigned operator==(Graph_Node &other);
 
@@ -45,7 +56,7 @@ public:
      * @param edge - the edge to add if not exists.
      * @return 1 if edge was added. 0 Otherwise.
      */
-    static unsigned int Add_Edge_If_Not_Exists(List<Graph_Edge> *lst, Graph_Edge *edge);
+//    static unsigned int Add_Edge_If_Not_Exists(List<Graph_Edge> *lst, Graph_Edge *edge);
 };
 
 
